@@ -6,9 +6,12 @@ This project demonstrates how to serve a machine learning model using FastAPI an
 
 # Build docker image and container
 To build the Docker image and deploy the container, follow these steps:
-docker build -t app-name .;
-docker run -d --name app-name -p 80:80 app-name;
-docker logs -f app-name;
+```console
+foo@bar:~$ docker build -t app-name .;
+foo@bar:~$ docker run -d --name app-name -p 80:80 app-name;
+foo@bar:~$ docker logs -f app-name;
+foo
+```
 
 # Remove docker image and container
 To stop and remove the Docker image and container, use the following commands:
