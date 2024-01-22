@@ -7,22 +7,25 @@ This project demonstrates how to serve a machine learning model using FastAPI an
 # Build docker image and container
 To build the Docker image and deploy the container, follow these steps:
 ```console
-foo@bar:~$ docker build -t app-name .;
-foo@bar:~$ docker run -d --name app-name -p 80:80 app-name;
-foo@bar:~$ docker logs -f app-name;
-foo
+docker build -t app-name .;
+docker run -d --name app-name -p 80:80 app-name;
+docker logs -f app-name;
 ```
 
 # Remove docker image and container
 To stop and remove the Docker image and container, use the following commands:
+```console
 docker stop app-name;
 docker rm -v app-name;
 docker rmi app-name;
+```
 
 # Step by Step
-## Build docker image and deploy container
+## Build a docker image and deploy the container
+```console
 docker build -t app-name .;
 docker run -d --name app-name -p 80:80 app-name;
+```
 ![image](https://github.com/ivanvaldes/PythonApiMachineLearning/assets/57267992/e9760005-2e73-41fe-a429-36740aa3aa6a)
 
 ## Connect to FastApi
@@ -31,17 +34,20 @@ Visit http://127.0.0.1/docs to access FastAPI documentation.
 
 ## Predict Language by Writing Text
 Send a POST request with the following JSON payload:
+```json
 {
   "text": "string"
 }
+```
 ![image](https://github.com/ivanvaldes/PythonApiMachineLearning/assets/57267992/07efcdd7-8283-4878-b3c7-c4b6dad57b23)
 
 ## View Prediction Result
 If successful, you'll receive a response with a 200 status code and the predicted language:
-
+```json
 {
   "language": "Spanish"
 }
+```
 ![image](https://github.com/ivanvaldes/PythonApiMachineLearning/assets/57267992/6293bc10-2c1b-4310-8f6f-41324c2d611f)
 
 Feel free to explore and use this project to deploy your own machine-learning models with FastAPI and Docker.
